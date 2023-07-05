@@ -2,10 +2,20 @@ require("dotenv").config()
 
 const express = require("express")
 const mongoose = require("mongoose")
+const cors = require('cors')
 
 const app = express()
 const workoutRoutes = require("./routes/workouts")
 const userRoutes = require("./routes/users")
+
+
+app.use(cors(
+  {
+    origin: "https://incandescent-pony-30152e.netlify.app",
+    methods: ["GET", "POST", "PUT", "DELETE"]
+  }
+
+))
 
 // middleware
 app.use(express.json())
