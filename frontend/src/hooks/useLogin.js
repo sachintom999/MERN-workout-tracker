@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useAuthContext } from "./useAuthContext"
+import { BACKEND_BASE_URL } from "./helper"
 
 export const useLogin = () => {
   const [isLoading, setIsLoading] = useState(null)
@@ -10,7 +11,7 @@ export const useLogin = () => {
     setIsLoading(true)
 
     const reqBody = { email, password }
-    const response = await fetch("/api/user/login", {
+    const response = await fetch(`${BACKEND_BASE_URL}/api/user/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
