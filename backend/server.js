@@ -13,6 +13,9 @@ app.use(express.json())
 // routes
 app.use("/api/workouts", workoutRoutes)
 app.use("/api/user", userRoutes)
+app.get("/msg", (req, res) => {
+  res.json({ msg: "hello world !" })
+})
 
 // DB connection
 mongoose
