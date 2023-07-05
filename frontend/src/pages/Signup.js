@@ -7,7 +7,6 @@ const Signup = () => {
   const { signup, error, isLoading } = useSignup()
 
   const submitHandler = async (e) => {
-    console.log("8")
     e.preventDefault()
 
     await signup(email, password)

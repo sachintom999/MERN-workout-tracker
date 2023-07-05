@@ -19,7 +19,6 @@ export const useSignup = () => {
       body: JSON.stringify(reqBody),
     })
     const json = await response.json()
-    console.log("json:", json)
 
     if (!response.ok) {
       setError(json.error)
